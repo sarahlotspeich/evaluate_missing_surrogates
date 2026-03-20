@@ -144,6 +144,6 @@ for (r in 1:REPS) {
   
   ## Save 
   sim_res |> 
-    write.csv(paste0("sett3_mar_givZ_seed", sim_seed, ".csv"), 
+    write.csv(paste0("sett3_mar_givZ_seed.csv"), 
               row.names = FALSE)
 }
