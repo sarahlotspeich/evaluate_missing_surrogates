@@ -12,6 +12,8 @@ devtools::install_github("sarahlotspeich/missSurrogate", ref = "main")
 
 ## Tables of Simulation Results
 
+*Note that all simulations were run in parallel across various random seeds, so the results from running them all in a single seed below may differ slightly due to Monte Carlo error.*
+
 **Table 1.** Simulation results for $\widehat{R}_S$, the proportion of treatment effect explained (PTE) in Setting 1, where the surrogate marker $S$ was missing completely at random for $32-39$% of patients in the sample of $n = 2000$. With $R_S = 0.5$, the surrogate $S$ was of moderate strength.
 
   - [Script (Run Simulations)](simulations/sett1_mcar.R)
@@ -42,8 +44,11 @@ devtools::install_github("sarahlotspeich/missSurrogate", ref = "main")
   - [Figure](figures/surrogate_density_overlap.pdf)
   - [Script (Make Figure)](figures/surrogate_density_overlap.R)
 
-**Figure 2.** Simulation results for $\widehat{R}_S$, the proportion of treatment effect explained (PTE) in Setting 4, when the surrogate marker $S$ was missing at random given primary outcome $Y$, treatment group $Z$, and their interaction $Y \times Z$. The weights model for the IPW approaches is misspecified when it includes $Y$ only or $Z$ only. 
+**Figure 2.** Simulation results for $\widehat{R}_S$, the proportion of treatment effect explained (PTE) in Setting $4$, when the surrogate marker $S$ was missing at random given $Y$ and the interaction $Y \times Z$  between it and treatment group (top row) or just the primary outcome $Y$ (bottom row).
 
   - [Figure](figures/sett5_non_overlap_boxplot.pdf)
+  - [Script (Run Simulations for Top Row)](simulations/sett4_misspec_ipw.R)
+  - [Script (Run Simulations for Bottom Row)](simulations/sett4_misspec_ipw_overfit.R)
   - [Script (Make Figure)](figures/sett5_non_overlap_boxplot.R)
-  - [Data (Simulation Results)](simulations/sett5_non_overlap.csv)
+  - [Data (Simulation Results for Top Row)](simulations/sett5_non_overlap.csv)
+  - [Data (Simulation Results for Bottom Row)](simulations/sett5_non_overlap_overfit.csv)
